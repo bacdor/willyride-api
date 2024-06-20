@@ -14,7 +14,7 @@ SECRET_KEY = '%n*nfl2s%w!dxtx&hhnzb(%c^5n8wv7k6$fjt&tz!)kvrolmjr'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'willyride-api-c8b2-oayb7ijya-dorians-projects-1f841bbe.vercel.app',
+    'localhost',
     '.vercel.app'
 ]
 
