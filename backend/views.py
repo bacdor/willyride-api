@@ -1,16 +1,8 @@
-from datetime import datetime
+from rest_framework import viewsets
+from .models import User
+from .serializers import UserSerializer
 
-from django.http import HttpResponse
 
-
-def index(request):
-    now = datetime.now()
-    html = f'''
-    <html>
-        <body>
-            <h1>Hello from Vercel!</h1>
-            <p>The current time is { now }.</p>
-        </body>
-    </html>
-    '''
-    return HttpResponse(html)
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
