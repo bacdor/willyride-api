@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import User
-from .serializers import UserSerializer
+from .models import User, RideRequest, RideOffer
+from .serializers import UserSerializer, RideRequestSerializer, RideOfferSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.response import Response
 from .serializers import MyTokenObtainPairSerializer
@@ -20,3 +20,11 @@ class MyTokenObtainPairView(TokenObtainPairView):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+class RideRequestViewSet(viewsets.ModelViewSet):
+    queryset = RideRequest.objects.all()
+    serializer_class = RideRequestSerializer
+
+class RideOfferViewSet(viewsets.ModelViewSet):
+    queryset = RideOffer.objects.all()
+    serializer_class = RideOfferSerializer

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User
+from .models import User, RideRequest, RideOffer
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import serializers
 from django.contrib.auth.models import User
@@ -57,3 +57,13 @@ class UserSerializer(serializers.ModelSerializer):
         if 'password' in validated_data:
             instance.set_password(validated_data['password'])
         return super().update(instance, validated_data)
+
+class RideRequestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RideRequest
+        fields = '__all__'
+
+class RideOfferSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RideOffer
+        fields = '__all__'
