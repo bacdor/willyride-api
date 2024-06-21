@@ -68,12 +68,10 @@ AUTH_USER_MODEL = 'backend.User'
 
 WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
-# CORS_ALLOWED_ORIGINS = [
-#     'localhost',
-#     "https://www.willyride.com",
-# ]
-
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',  # Adjust the port if your local server uses a different one
+    "http://willyride.com",
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
