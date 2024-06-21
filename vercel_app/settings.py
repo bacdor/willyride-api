@@ -82,9 +82,6 @@ REST_FRAMEWORK = {
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-from dotenv import load_dotenv
-load_dotenv()
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
