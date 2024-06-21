@@ -15,7 +15,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    '.vercel.app'
+    '.vercel.app',
+    '127.0.0.1'
 ]
 
 
@@ -67,9 +68,12 @@ AUTH_USER_MODEL = 'backend.User'
 
 WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
-CORS_ALLOWED_ORIGINS = [
-    "https://www.willyride.com",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     'localhost',
+#     "https://www.willyride.com",
+# ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -80,6 +84,8 @@ REST_FRAMEWORK = {
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+from dotenv import load_dotenv
+load_dotenv()
 
 DATABASES = {
     "default": {
