@@ -70,7 +70,7 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
-    "https://willyride.com",
+    "https://www.willyride.com",
 ]
 
 REST_FRAMEWORK = {
