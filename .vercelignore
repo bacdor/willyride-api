@@ -1,4 +1,5 @@
 __pycache__/
+migrations/
 .direnv/
 node_modules/
 .envrc
