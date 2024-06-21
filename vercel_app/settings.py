@@ -67,7 +67,9 @@ AUTH_USER_MODEL = 'backend.User'
 
 WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    "https://www.willyride.com",
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
