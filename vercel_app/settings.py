@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY"),
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,8 +36,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -81,17 +81,9 @@ REST_FRAMEWORK = {
     )
 }
 
-# Simple JWT settings
-SIMPLE_JWT = {
-    'SIGNING_KEY': 'eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTcxOTAwMTg4MSwiaWF0IjoxNzE5MDAxODgxfQ.XtGtODJGu3rpevSNDmsjYnf7zq4ooTkCsg0_7fUM_rM',
-    'ALGORITHM': 'HS256',
-}
-
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-from dotenv import load_dotenv
-load_dotenv()
+
 
 DATABASES = {
     "default": {
