@@ -36,10 +36,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -68,10 +68,12 @@ AUTH_USER_MODEL = 'backend.User'
 
 WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    "https://www.willyride.com",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:3000',
+#     "https://www.willyride.com",
+# ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -79,9 +81,18 @@ REST_FRAMEWORK = {
     )
 }
 
+# Simple JWT settings
+SIMPLE_JWT = {
+    'SIGNING_KEY': 'eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTcxOTAwMTg4MSwiaWF0IjoxNzE5MDAxODgxfQ.XtGtODJGu3rpevSNDmsjYnf7zq4ooTkCsg0_7fUM_rM',
+    'ALGORITHM': 'HS256',
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+from dotenv import load_dotenv
+load_dotenv()
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
